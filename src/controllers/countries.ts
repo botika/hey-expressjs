@@ -1,5 +1,5 @@
-import {NextFunction, Request, Response, Router} from 'express';
-import countries, {Order} from '../models/country';
+import { Request, Response, Router } from 'express';
+import countries, { Order } from 'models/country';
 
 const Controller: Router = Router();
 
@@ -13,7 +13,7 @@ Controller.get('/', async (req: Request, res: Response) => {
       res.status(400).send('Bad filter parameter');
     }
   } catch (e) {
-      res.status(400).send(e.message);
+    res.status(400).send(e.message);
   }
 });
 

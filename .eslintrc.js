@@ -14,7 +14,10 @@ module.exports = {
   settings: {
     'import/resolver': {
       alias: {
-        map: [['controllers', './src/controllers']],
+        map: [
+          ['controllers', './src/controllers'],
+          ['models', './src/models']
+        ],
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       },
     },
