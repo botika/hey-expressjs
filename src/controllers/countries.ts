@@ -7,7 +7,7 @@ Controller.get('/', async (req: Request, res: Response) => {
   try {
     const filter = req.query.filter;
     if (typeof filter === 'string') {
-      const order: Order = req.query.order as Order;
+      const order = req.query.order as Order;
       res.status(200).send(countries(filter, order));
     } else {
       res.status(400).send('Bad filter parameter');

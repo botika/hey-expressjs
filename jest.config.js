@@ -1,9 +1,7 @@
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const { compilerOptions } = require('./tsconfig');
 
-const moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths, {
-  prefix: '<rootDir>/src/',
-});
+const moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/src/' });
 
 module.exports = {
   roots: ['<rootDir>/src'],
@@ -13,7 +11,9 @@ module.exports = {
   ],
   testEnvironment: 'node',
   preset: 'ts-jest',
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$'],
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
+  ],
   moduleNameMapper,
   watchPlugins: [
     'jest-watch-typeahead/filename',
