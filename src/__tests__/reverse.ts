@@ -7,5 +7,5 @@ it('Request /reverse/foo', async () => {
     .send();
 
   expect(result.status).toBe(200);
-  expect(result.text).toEqual('oof');
+  expect(result.text).toEqual('OOf');
 });
