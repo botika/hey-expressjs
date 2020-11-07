@@ -1,11 +1,11 @@
 import express, { Application } from 'express';
 
-import Hello from 'controllers/hello';
+import Countries from 'controllers/countries';
 
 // Boot express
 const app: Application = express();
 
 // Application routing
-app.use('/', Hello);
+app.use('/countries', Countries);
 
 export default app;
