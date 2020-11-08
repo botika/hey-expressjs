@@ -34,6 +34,7 @@ it('Request /countries?filter=B&order=desc', async () => {
     20,
   ]);
 });
+
 it('Request /countries?order=asc', async () => {
   const result = await request(app).get('/countries?filter=&order=asc').send();
 

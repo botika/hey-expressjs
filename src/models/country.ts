@@ -26,6 +26,6 @@ function filter(q: string, v: string): boolean {
 export default function query(q: string, o: Order): Country[] {
   return sort(
     o,
-    (data as Country[]).filter((x) => filter(q, x.country) || filter(q, x.code))
+    (data as Country[]).filter((x) => filter(q, x.country) || filter(q, x.code)),
   );
 }

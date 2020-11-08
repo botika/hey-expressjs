@@ -1,11 +1,11 @@
 FROM node:alpine
 ENV NODE_ENV=production
-WORKDIR /usr/src/app
-COPY package*.json ./
+ENV SIMPLE_ARRAY='["foo", "bar", "fon", "bar"]'
 
+WORKDIR /usr/src/app
 COPY . .
 RUN npm ci --only=production
 RUN npm run build
-EXPOSE 8080
 
-CMD ["node", "dist/index.js"]
+EXPOSE 8080
+CMD ["node", "-r", "tsconfig-paths/register", "-r", "ts-node/register/transpile-only", "dist/index.js"]

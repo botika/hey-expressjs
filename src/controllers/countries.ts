@@ -5,10 +5,9 @@ const Controller: Router = Router();
 
 Controller.get('/', async (req: Request, res: Response) => {
   try {
-    const filter = req.query.filter;
+    const { filter, order } = req.query;
     if (typeof filter === 'string') {
-      const order = req.query.order as Order;
-      res.status(200).send(countries(filter, order));
+      res.status(200).send(countries(filter, order as Order));
     } else {
       res.status(400).send('Bad filter parameter');
     }
