@@ -9,6 +9,6 @@ const app: Application = express();
 // Application routing
 app.use('/countries', require('controllers/countries').default);
 app.use('/reverse', require('controllers/reverse').default);
-app.use('/append', require('controllers/reverse').default);
+app.use('/append', require('controllers/append').default);
 
 export default app;
